@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        body{
+            font-family: "Quicksand", serif;
+            font-weight: 500;
+        }
+    </style>
+    <div class="main bg-[#efe]">
+        <div class="header flex justify-evenly items-center py-4 shadow-sm border-b border-solid">
+            <h1 onclick="window.location.href='/index.html'" class="cursor-pointer text-center font-extrabold text-[24px] text-blue-500">FORM VALIDATION</h1>
+            <a class="search cursor-pointer text-blue-600 hover:text-blue-500 flex gap-2" href="/search.html">Search<span class="material-symbols-outlined">search</span></a>
+        </div>
+        <div class="container flex justify-center items-center">
+            <form id="form-data" class="w-[500px] bg-white flex flex-col gap-3 mt-4 border border-solid border-[#ddd] my-2 shadow-2xl px-6 py-6 rounded-md">
+                <div class="flex flex-col">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Enter your name" class="py-1 ps-2 border border-solid border-[#ccc] rounded-md" id="name">
+                    <span class="nameErr text-red-500 text-[12px] err"></span>
+                    <span class="success nameSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Create an username" class="py-1 ps-2 border border-solid border-[#ccc] rounded-md" id="username">
+                    <span class="usernameErr text-red-500 text-[12px] err"></span>
+                    <span class="success usernameSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Enter your email id" class="py-1 ps-2 border border-solid border-[#ccc] rounded-md" id="email">
+                    <span class="emailErr text-red-500 text-[12px] err"></span>
+                    <span class="success emailSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="contact">Contact No</label>
+                    <input type="text" placeholder="Enter your contact number" class="py-1 ps-2 border border-solid border-[#ccc] rounded-md" id="contact">
+                    <span class="contactErr text-red-500 text-[12px] err"></span>
+                    <span class="success contactSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="dob">Date of birth</label>
+                    <input type="date" class="py-1 ps-2 border border-solid border-[#ccc] rounded-md" id="dob">
+                    <span class="dobErr text-red-500 text-[12px] err"></span>
+                    <span class="success dobSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="gender">Gender</label>
+                    <select  class="border border-solid py-2 ps-2 border-[#ccc] rounded-md" id="gender">
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="others">Others</option>
+                    </select>
+                    <span class="genderErr text-red-500 text-[12px] err"></span>
+                    <span class="success genderSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="education">Education</label>
+                    <select class="py-2 ps-2 border border-solid border-[#ccc] rounded-md" id="education">
+                        <option value="" disabled selected>Select Education</option>
+                        <option value="btech">B.Tech</option>
+                        <option value="be">B.E</option>
+                        <option value="bcom">B.Com</option>
+                        <option value="bsc">B.Sc</option>
+                        <option value="phd">phd</option>
+                        <option value="me">M.E</option>
+                        <option value="others">Others</option>
+                    </select>
+                    <span class="educationErr text-red-500 text-[12px] err"></span>
+                    <span class="success educationSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="password">Password</label>
+                    <input placeholder="Create a password" type="password" class="py-1 ps-2 border border-solid border-[#ccc] rounded-md" id="password">
+                    <span class="passwordErr text-red-500 text-[12px] err"></span>
+                    <span class="success passwordSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="repassword">Re Password</label>
+                    <input placeholder="Re enter the password" type="password" class="border py-1 ps-2 border-solid border-[#ccc] rounded-md" id="repassword">
+                    <span class="repasswordErr  text-red-500 text-[12px] err"></span>
+                    <span class="success repasswordSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="pancard">Pan card</label>
+                    <input placeholder="Enter the pancard number" type="text" class="border py-1 ps-2 border-solid border-[#ccc] rounded-md" id="pancard">
+                    <span class="pancardErr text-red-500 text-[12px] err"></span>
+                    <span class="success pancardSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div class="flex flex-col">
+                    <label for="profile">Profile picture</label>
+                    <input type="file" id="profile">
+                    <span class="profileErr text-red-500 text-[12px] err"></span>
+                    <span class="success profileSuccess text-green-600 text-[12px]"></span>
+                </div>
+                <div  class="flex flex-col">
+                    <button class="bg-black rounded-md py-1 text-white">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+        const form = document.querySelector('#form-data');
+
+        const nameIn = document.querySelector('#name');
+        const usernameIn = document.querySelector('#username');
+        const emailIn = document.querySelector('#email');
+        const contactIn = document.querySelector('#contact');
+        const dobIn = document.querySelector('#dob');
+        const educationIn = document.querySelector('#education');
+        const passwordIn = document.querySelector('#password');
+        const repasswordIn = document.querySelector('#repassword');
+        const genderIn = document.querySelector('#gender');
+        const pancardIn = document.querySelector('#pancard');
+        const profileIn = document.querySelector('#profile');
+
+        const nameErr = document.querySelector('.nameErr');
+        const usernameErr = document.querySelector('.usernameErr');
+        const emailErr = document.querySelector('.emailErr');
+        const contactErr = document.querySelector('.contactErr');
+        const dobErr = document.querySelector('.dobErr');
+        const educationErr = document.querySelector('.educationErr');
+        const passwordErr = document.querySelector('.passwordErr');
+        const repasswordErr = document.querySelector('.repasswordErr');
+        const genderErr = document.querySelector('.genderErr');
+        const pancardErr = document.querySelector('.pancardErr');
+        const profileErr = document.querySelector('.profileErr');
+
+
+        const nameSuccess = document.querySelector('.nameSuccess');
+        const usernameSuccess = document.querySelector('.usernameSuccess');
+        const emailSuccess = document.querySelector('.emailSuccess');
+        const contactSuccess = document.querySelector('.contactSuccess');
+        const dobSuccess = document.querySelector('.dobSuccess');
+        const educationSuccess = document.querySelector('.educationSuccess');
+        const passwordSuccess = document.querySelector('.passwordSuccess');
+        const repasswordSuccess = document.querySelector('.repasswordSuccess');
+        const genderSuccess = document.querySelector('.genderSuccess');
+        const pancardSuccess = document.querySelector('.pancardSuccess');
+        const profileSuccess = document.querySelector('.profileSuccess');
+
+        const nameRegex = /^[a-zA-Z\s]+$/;
+        const usernameRegex = /^[a-zA-Z][a-zA-Z0-9]*$/; 
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;  
+        const contactRegex = /^[6-9][0-9]{9}$/; 
+        const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[$#%^&*])[a-zA-Z\d$#%^&*]{8,}$/;  
+        const pancardRegex = /^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/;
+
+        function nameValidate(name){
+            if(name === ""){
+                nameSuccess.textContent = "";
+                nameErr.textContent = "Please enter your name";
+                return false;
+            }else if(!nameRegex.test(name)){
+                nameSuccess.textContent = "";
+                nameErr.textContent = "Name only contains character a-z. Please enter valid name";
+                return false;
+            }else if(name.length < 3){
+                nameSuccess.textContent = "";
+                nameErr.textContent = "Name should contains atlest 3 characters";
+                return false;
+            }else{
+                nameErr.textContent = "";
+                nameSuccess.textContent = "Looks good!";
+                return true;
+            }
+        }
+
+
+
+        function usernameValidate(username){
+            if(username === ""){
+                usernameErr.textContent = "Please create username";
+                usernameSuccess.textContent = ""
+                return false;
+            }else if(!usernameRegex.test(username)){
+                usernameErr.textContent = "Invalid username."
+                usernameSuccess.textContent = ""
+                return false;
+            }else if(username.length < 3){
+                usernameSuccess.textContent = "";
+                usernameErr.textContent = "Username should contains atlest 3 characters";
+                return false;
+            }else if(isAlreadyTaken(username)){
+                usernameErr.textContent = "Username is already taken. please try another";
+                usernameSuccess.textContent = ""
+                return false;
+            }else{
+                usernameErr.textContent = "";
+                usernameSuccess.textContent = "Username is available✅"
+                return true;
+            }
+        }
+
+
+        function emailValidate(email){
+            if(email === ""){
+                emailErr.textContent = "Please enter your email address";
+                emailSuccess.textContent = "";
+                return false;
+            }else if(!emailRegex.test(email)){
+                emailErr.textContent = "Invalid email address";
+                emailSuccess.textContent = "";
+                return false;
+            }else if(isEmailAlreadyExists(email)){
+                emailErr.textContent = "This email address is already exists.";
+                emailSuccess.textContent = "";
+                return false;
+            }else{
+                emailErr.textContent = "";
+                emailSuccess.textContent = "Valid email address!👍";
+                return true;
+            }
+        }
+
+        function contactValidate(contact){
+            if(contact === ""){
+                contactErr.textContent = "Please enter your contact number.";
+                contactSuccess.textContent = "";
+                return false;
+            }else if(!contactRegex.test(contact)){
+                contactErr.textContent = "Invalid contact number";
+                contactSuccess.textContent = "";
+                return false;
+            }else if(isContactAlreadyExists(contact)){
+                contactErr.textContent = "This contact number already exists.";
+                contactSuccess.textContent = "";
+                return false;
+            }else{
+                contactErr.textContent = "";
+                contactSuccess.textContent = "Valid Contact✅";
+                return true;
+            }
+        }
+
+        function dobValidate(dob){
+            if(dob === ""){
+                dobSuccess.textContent = "";
+                dobErr.textContent = "Please enter your date of birth.";
+                return false;
+            }else{
+                let year = dob.split('-');
+                if(!(Number(year[0])>=1950 && Number(year[0]) <= 2020)){
+                    dobSuccess.textContent = "";
+                    dobErr.textContent = "Date of birth should be between 1950 to 2020";
+                    return false;
+                }else{
+                    dobErr.textContent = "";
+                    dobSuccess.textContent = "Valid DOB🤙";
+                    return true;
+                }
+            }
+        }
+
+        function passwordValidate(password){
+            if(password === ""){
+                passwordSuccess.textContent = "";
+                passwordErr.textContent = "Please enter the password";
+                return false;
+            }else if(!passwordRegex.test(password)){
+                passwordSuccess.textContent = "";
+                passwordErr.textContent = "Password should contains 8 characters, atleast 1 uppercase, special character";
+                return false;
+            }else{
+                passwordSuccess.textContent = "Valid password👍";
+                passwordErr.textContent = "";
+                return true;
+            }
+        }
+
+        function repasswordValidate(repassword){
+            if(repassword === ""){
+                repasswordSuccess.textContent = "";
+                repasswordErr.textContent = "Please enter the re-password";
+                return false;
+            }else if(passwordIn.value !== repassword){
+                repasswordSuccess.textContent = "";
+                repasswordErr.textContent = "Password and Repassword doesn't match";
+                return false;
+            }else{
+                repasswordSuccess.textContent = "Password & Re-entered password matched🙌   ";
+                repasswordErr.textContent = "";
+                return true;
+            }
+        }
+            
+        function pancardValidate(pancard){
+            if(pancard === ""){
+                pancardSuccess.textContent = "";
+                pancardErr.textContent = "Please enter your pancard number";
+                return false;
+            }else if(!pancardRegex.test(pancard)){
+                pancardSuccess.textContent = "";
+                pancardErr.textContent = "Invalid pancard number";
+                return false;
+            }else if(isPancardAlreadyExists(pancard)){
+                pancardSuccess.textContent = "";
+                pancardErr.textContent = "This pancard number is already registered";
+                return false;
+            }else{
+                pancardErr.textContent = "";
+                pancardSuccess.textContent = "Looks good👍";
+                return true;
+            }
+        }
+
+        function genderValidate(gender){
+            if(gender === ""){
+                genderErr.textContent = "Please select the gender";
+                genderSuccess.textContent = "";
+                return false;
+            }else{
+                genderErr.textContent = "";
+                genderSuccess.textContent = "Done!"
+                return true;
+            }
+        }
+        
+        function educationValidate(education){
+            if(education === ""){
+                educationErr.textContent = "Please select the education";   
+                educationSuccess.textContent = "";
+                return false;
+            }else{
+                educationErr.textContent = "";
+                educationSuccess.textContent = "Done!";
+                return true;
+            }
+        }
+
+        function profileValidate(profile){
+            const Max = 2*1024*1024;
+            const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+
+            const file = profile.files[0];
+            if(!file){
+                profileSuccess.textContent = '';
+                profileErr.textContent = 'Please select a profile image';
+                return false;
+            }else if(!allowedTypes.includes(file.type)){
+                profileSuccess.textContent = '';
+                profileErr.textContent = 'Only JPEG, PNG, JPG are allowed';
+                return false;
+            }else if(file.size > Max){
+                profileSuccess.textContent = '';
+                profileErr.textContent = 'File size must be less than 2MBs';
+                return false;
+            }else{
+                profileErr.textContent = '';
+                profileSuccess.textContent = 'Looks good🤞';
+                return true;
+            }
+        }        
+
+        function isAlreadyTaken(username){
+            const jsonData = JSON.parse(localStorage.getItem('form-data')) || [];
+
+            for(let i = 0; i < jsonData.length; i++){
+                if(jsonData[i].username === username)
+                    return true;
+            }
+            return false;
+        }
+
+        function isEmailAlreadyExists(email){
+            const jsonData = JSON.parse(localStorage.getItem('form-data')) || [];
+
+            for(let i = 0; i < jsonData.length; i++){
+                if(jsonData[i].email === email)
+                    return true;
+            }
+            return false;
+        }
+
+        function isContactAlreadyExists(contact){
+            const jsonData = JSON.parse(localStorage.getItem('form-data')) || [];
+
+            for(let i = 0; i < jsonData.length; i++){
+                if(jsonData[i].contact === contact)
+                    return true;
+            }
+            return false;
+        }
+
+        function isPancardAlreadyExists(pancard){
+            const jsonData = JSON.parse(localStorage.getItem('form-data')) || [];
+
+            for(let i = 0; i < jsonData.length; i++){
+                if(jsonData[i].pancard === pancard)
+                    return true;
+            }
+            return false;
+        }
+
+        let isValid = true;
+        
+
+        function validateForm(){
+            isValid = true;
+
+            const name = document.querySelector('#name').value;
+            const username = document.querySelector('#username').value.toLowerCase();
+            const email = document.querySelector('#email').value;
+            const contact = document.querySelector('#contact').value;
+            const dob = document.querySelector('#dob').value;
+            const education = document.querySelector('#education').value;
+            const password = document.querySelector('#password').value;
+            const repassword = document.querySelector('#repassword').value;
+            const gender = document.querySelector('#gender').value;
+            const pancard = document.querySelector('#pancard').value;
+            const profile = document.querySelector('#profile');
+
+
+            isValid = nameValidate(name) || usernameValidate(username) || emailValidate(email) || contactValidate(contact) || passwordValidate(password) || repasswordValidate(repassword) || dobValidate(dob) || profileValidate(profile) || pancardValidate(pancard) || genderValidate(gender) || educationValidate(education);
+
+
+            if(isValid){
+                const reader = new FileReader();
+                const file = profile.files[0];
+            
+                reader.onload = function(event){
+                    const base64Image = event.target.result;
+                    console.log(base64Image)
+
+                    const jsonData = JSON.parse(localStorage.getItem('form-data')) || [];
+                    const newdata = {
+                        name: name,
+                        username: username,
+                        email: email,
+                        password: password,
+                        contact: contact,
+                        dob: dob,
+                        gender: gender,
+                        education: education,
+                        pancard: pancard, 
+                        profile: base64Image
+                    }
+
+                    jsonData.push(newdata);
+                    localStorage.setItem('form-data', JSON.stringify(jsonData));
+                    console.log(localStorage.getItem('form-data'));
+                }
+            
+                reader.readAsDataURL(file);
+
+                alert('Form submitted successfully');
+                form.reset();
+                nameSuccess.textContent = "";
+                usernameSuccess.textContent = '';
+                contactSuccess.textContent = '';
+                dobSuccess.textContent = '';
+                emailSuccess.textContent = '';
+                educationSuccess.textContent = '';
+                passwordSuccess.textContent = '';
+                repasswordSuccess.textContent = '';
+                profileSuccess.textContent = '';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                validateForm();
+            })
+
+            nameIn.addEventListener('input', () => nameValidate(nameIn.value));
+            usernameIn.addEventListener('input', () => usernameValidate(usernameIn.value.toLowerCase()));
+            emailIn.addEventListener('input', () => emailValidate(emailIn.value));
+            passwordIn.addEventListener('input', () => passwordValidate(passwordIn.value));
+            repasswordIn.addEventListener('input', () => repasswordValidate(repasswordIn.value));
+            dobIn.addEventListener('input', () => dobValidate(dobIn.value));
+            profileIn.addEventListener('input', () => profileValidate(profileIn));
+            contactIn.addEventListener('input', () => contactValidate(contactIn.value));
+            pancardIn.addEventListener('input', () => pancardValidate(pancardIn.value));
+            educationIn.addEventListener('input', () => educationValidate(educationIn.value));
+            genderIn.addEventListener('input', () => genderValidate(genderIn.value));
+        })
+
+    </script>
+</body>
+</html>
